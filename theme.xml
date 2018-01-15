@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Theme name="BS Blog 03" version="1.0" date="2017-12-17" compatibility="2.0" >
+	<author name="fizi" url="http://fizithemes.hu" email="fizi@wsb.hu"/>
+	<summary>BS Blog 03 Bootstrap3 theme by fizi</summary>
+	<description>BS Blog 03 bootstrap 3 theme.</description>
+  <category>blog</category>
+  <copyright>Theme by: FIZI THEMES</copyright>
+  <plugins>
+    <plugin name='social' url='core' />
+    <plugin name='pm' url='core' />
+	  <plugin name='chatbox_menu' url='core' />
+	  <plugin name='poll' url='core' />
+	  <plugin name='gallery' url='core' />
+	  <plugin name='forum' url='core' />
+	  <plugin name='hits' url='core' />
+	  <plugin name='list_new' url='core' />
+	  <plugin name='tagcloud' url='core' />
+	  <plugin name='calendar_menu' url='core' />
+	</plugins>
+  <libraries> 
+    <library name='bootstrap' scope='all' /> 
+    <library name='fontawesome' scope='all' /> 
+    <library name='bootstrap.editable' scope='admin' /> 
+  </libraries>
+	<keywords>
+		<word>bootstrap</word>
+		<word>blog</word>
+    <word>responsive</word>
+	</keywords>
+	<screenshots>
+		<image>preview.jpg</image>
+	</screenshots>
+	<stylesheets>
+		<css file="style.css" name="Default" />
+	</stylesheets>
+	<layouts>
+    <layout name='blog_03_home' title='Blog 03 Homepage' default='false'>
+			<custompages>FRONTPAGE</custompages>	
+		</layout>
+    <layout name='blog_03_with_sidebar' title='Blog 03 with Sidebar' default='true' />      
+  </layouts>
+</e107Theme>
