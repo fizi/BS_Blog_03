@@ -11,7 +11,10 @@
 
 // Modified by fizi **********************************************************************
 
-$GALLERY_TEMPLATE['list']['caption'] = '';
+$GALLERY_TEMPLATE = array();
+
+
+$GALLERY_TEMPLATE['list']['caption'] = LAN_PLUGIN_GALLERY_TITLE;
 
 $GALLERY_TEMPLATE['list']['start'] = ' 
 <div class="gallery-list-caption-image" style="background: url({GALLERY_THUMB: w=2000&thumbsrc}) no-repeat center center; background-size: cover;">
@@ -56,7 +59,7 @@ $GALLERY_TEMPLATE['list']['end'] = '
 
 
 // Bootstrap3 Compatible.
-$GALLERY_TEMPLATE['cat']['caption'] = '';
+$GALLERY_TEMPLATE['cat']['caption'] = LAN_PLUGIN_GALLERY_TITLE;
 
 $GALLERY_TEMPLATE['cat']['start'] = ' 
 <div class="gallery-cat-caption-image" style="background: url({GALLERY_CAT_THUMB: w=2000&h=1000&thumbsrc}) no-repeat center center; background-size: cover;">
