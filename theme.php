@@ -283,6 +283,10 @@ define('TRACKBACKBEFORESTRING', '&nbsp;|&nbsp;');
   {
     $style = 'gallery';
   }
+  if($id === "forum")
+  {
+    $style = 'forum';
+  }
 
 	//@todo a switch will be faster than all these elseif statements. 
 	
@@ -308,8 +312,14 @@ define('TRACKBACKBEFORESTRING', '&nbsp;|&nbsp;');
       echo "<div class='maincontent-box'>                             
               <div class='maincontent-box-body'>{$text}</div>
             </div>";
-    break;        
+    break;
     
+    case "forum":
+      echo "<div class='maincontent-box'>                             
+              <div class='maincontent-box-body'>{$text}</div>
+            </div>";
+    break;
+                
     case "sidebar":
       echo "<div class='sidebar-box'>
               <div class='sidebar-box-title'>             		                                                      
