@@ -314,77 +314,78 @@ $FORUM_CRUMB['forum']['value'] = "<a class='forumlink' href='{FORUM_HREF}'>{FORU
 // Modified by fizi ************************************************************  
 $FORUM_VIEWTOPIC_TEMPLATE = array();
 
-$FORUM_VIEWTOPIC_TEMPLATE['caption'] 	= "
-{SETIMAGE: w=1200&h=1000&crop=1}
-<div class='forum-view-topic-caption-image' style='background: url(".THEME_ABS."images/forum-caption-bg.jpg) no-repeat center center; background-size: cover;'>
-  <div class='forum-view-topic-caption-image-inner'><h2>{THREADNAME}</h2></div>
-</div>
-";
+$FORUM_VIEWTOPIC_TEMPLATE['caption'] 	= "";
 
 $FORUM_VIEWTOPIC_TEMPLATE['start'] 	= "
 <div id='forum-view-topic'>
-	{BACKLINK}
-  <div class='row'>
-	  <div class='col-md-9 forum-topic-title'><h3>{THREADNAME}</h3></div>
-    <div class='col-md-3 forum-topic-button text-right'>{TRACK} {BUTTONSX}</div>
-  </div>	
-  {MESSAGE}											
-  <ul class='forum-viewtopic unstyled list-unstyled'>
+  {SETIMAGE: w=2000&h=1000&crop=1}
+  <div class='forum-view-topic-caption-image' style='background: url(".THEME_ABS."images/forum-caption-bg.jpg) no-repeat center center; background-size: cover;'>
+    <div class='forum-view-topic-caption-image-inner'><h2>{THREADNAME}</h2></div>
+  </div>
+  <div class='col-md-offset-1 col-md-10'>
+	  {BACKLINK}
+    <div class='row'>
+	    <div class='col-md-9 forum-topic-title'><h3>{THREADNAME}</h3></div>
+      <div class='col-md-3 forum-topic-button text-right'>{TRACK} {BUTTONSX}</div>
+    </div>	
+    {MESSAGE}											
+    <ul class='forum-viewtopic unstyled list-unstyled'>
 ";
 
 $FORUM_VIEWTOPIC_TEMPLATE['thread'] = "
-    <li id='post-{POSTID}' class='forum-viewtopic-post'>
-      {SETIMAGE: w=100&h=100&crop=1}
-      <div class='forum-viewtopic-postdate'>{THREADDATESTAMP}</div>
-      <div class='forum-viewtopic-postcontent'>
-        <div class='row'>
-          <div class='col-sm-2 text-center left-col'>
-            <div class='forum-user-combo'>{USERCOMBO}<br />{CUSTOMTITLE}</div>
-				    {NEWFLAG} {ANON_IP}
-            <div class='forum-viewtopic-avatar'>{AVATAR}</div>
-					  <div class='forum-viewtopic-level'>
-              <div class='smalltext'>{LEVEL=badge}</div>
-            </div>
-            <div class='forum-viewtopic-level-icons'><small>{LEVEL=glyph}</small></div>
-            <div class='visible-xs'>{POSTOPTIONS}</div>
-            <div class='clearfix'></div>
-            <div class='visible-xs col-xs-12'><hr /></div>
-          </div> 
-          <div class='col-sm-10 right-col'>
-            <div class='row'>
-              <div class='col-sm-6 text-muted'>
-                <div class='smalltext'>{LASTEDIT}&nbsp;&nbsp;{LASTEDITBY}</div>
+      <li id='post-{POSTID}' class='forum-viewtopic-post'>
+        {SETIMAGE: w=100&h=100&crop=1}
+        <div class='forum-viewtopic-postdate'>{THREADDATESTAMP}</div>
+        <div class='forum-viewtopic-postcontent'>
+          <div class='row'>
+            <div class='col-sm-2 text-center left-col'>
+              <div class='forum-user-combo'>{USERCOMBO}<br />{CUSTOMTITLE}</div>
+				      {NEWFLAG} {ANON_IP}
+              <div class='forum-viewtopic-avatar'>{AVATAR}</div>
+					    <div class='forum-viewtopic-level'>
+                <div class='smalltext'>{LEVEL=badge}</div>
               </div>
-              <div class='hidden-xs col-sm-6 text-right'>{POSTOPTIONS}</div>
+              <div class='forum-viewtopic-level-icons'><small>{LEVEL=glyph}</small></div>
+              <div class='visible-xs'>{POSTOPTIONS}</div>
+              <div class='clearfix'></div>
+              <div class='visible-xs col-xs-12'><hr /></div>
+            </div> 
+            <div class='col-sm-10 right-col'>
+              <div class='row'>
+                <div class='col-sm-6 text-muted'>
+                  <div class='smalltext'>{LASTEDIT}&nbsp;&nbsp;{LASTEDITBY}</div>
+                </div>
+                <div class='hidden-xs col-sm-6 text-right'>{POSTOPTIONS}</div>
+              </div>
+              <div class='forum-viewtopic-postmessage'>
+                {POLL}
+					      {THREAD_TEXT}
+				  	    {ATTACHMENTS: modal=1}
+              </div>
+              <div class='finfobar'>{SIGNATURE=clean}</div>
             </div>
-            <div class='forum-viewtopic-postmessage'>
-              {POLL}
-					    {THREAD_TEXT}
-				  	  {ATTACHMENTS: modal=1}
-            </div>
-            <div class='finfobar'>{SIGNATURE=clean}</div>
           </div>
         </div>
-      </div>
-		</li>
+		  </li>
 ";
 
 $FORUM_VIEWTOPIC_TEMPLATE['end'] = "
-  </ul>
-  <div class='row'>
-	  <div class='col-xs-12 col-md-4'></div>
-	  <div class='col-xs-12 col-md-4 text-center'>
-		  {GOTOPAGES}
-	  </div>
-	  <div class='col-xs-12 col-md-4'>
-		  <div class='forum-topic-button text-right'>{BUTTONSX}</div>
-	  </div>
+    </ul>
+    <div class='row'>
+	    <div class='col-xs-12 col-md-4'></div>
+	    <div class='col-xs-12 col-md-4 text-center'>
+		    {GOTOPAGES}
+	    </div>
+	    <div class='col-xs-12 col-md-4'>
+		    <div class='forum-topic-button text-right'>{BUTTONSX}</div>
+	    </div>
+    </div>
+    <div class='row'>
+	    <div class='col-xs-12 col-md-6 col-md-offset-3'>{QUICKREPLY}</div>
+    </div>
+    <div class='smalltext text-muted'>{MODERATORS}</div>
+    {THREADSTATUS}
   </div>
-  <div class='row'>
-	  <div class='col-xs-12 col-md-6 col-md-offset-3'>{QUICKREPLY}</div>
-  </div>
-  <div class='smalltext text-muted'>{MODERATORS}</div>
-  {THREADSTATUS}
 </div>
 ";
 
@@ -395,35 +396,35 @@ $FORUM_VIEWTOPIC_TEMPLATE['replies'] = $FORUM_VIEWTOPIC_TEMPLATE['thread'];
 
 
 $FORUM_VIEWTOPIC_TEMPLATE['deleted'] = "
-    <li id='post-{POSTID}' class='forum-viewtopic-post'>
-      {SETIMAGE: w=100&h=100&crop=1}
-      <div class='forum-viewtopic-postdate'>{THREADDATESTAMP}</div>
-      <div class='forum-viewtopic-postcontent'>
-        <div class='row'>
-          <div class='col-sm-2 text-center'>
-            <div class='forum-user-combo'>{USERCOMBO}<br />{CUSTOMTITLE}</div>
-				    {NEWFLAG} {ANON_IP}
-            <div class='forum-viewtopic-avatar'>{AVATAR}</div>
-					  <div class='forum-viewtopic-level'>
-              <div class='smalltext'>{LEVEL=badge}</div>
-            </div>
-            <div class='forum-viewtopic-level-icons'><small>{LEVEL=glyph}</small></div>
-            <div class='visible-xs visible-sm'>{POSTOPTIONS}</div>
-            <div class='visible-xs visible-sm col-sm-12'><hr /></div>
-          </div>
-          <div class='col-sm-10'>
-            <div class='row'>
-              <div class='col-sm-12 col-md-6 text-muted'>
-                <div class='smalltext'>{LASTEDIT}&nbsp;&nbsp;{LASTEDITBY}</div>
+      <li id='post-{POSTID}' class='forum-viewtopic-post'>
+        {SETIMAGE: w=100&h=100&crop=1}
+        <div class='forum-viewtopic-postdate'>{THREADDATESTAMP}</div>
+        <div class='forum-viewtopic-postcontent'>
+          <div class='row'>
+            <div class='col-sm-2 text-center'>
+              <div class='forum-user-combo'>{USERCOMBO}<br />{CUSTOMTITLE}</div>
+				      {NEWFLAG} {ANON_IP}
+              <div class='forum-viewtopic-avatar'>{AVATAR}</div>
+					    <div class='forum-viewtopic-level'>
+                <div class='smalltext'>{LEVEL=badge}</div>
               </div>
-              <div class='hidden-xs hidden-sm col-md-6 text-right'>{POSTOPTIONS}</div>
+              <div class='forum-viewtopic-level-icons'><small>{LEVEL=glyph}</small></div>
+              <div class='visible-xs visible-sm'>{POSTOPTIONS}</div>
+              <div class='visible-xs visible-sm col-sm-12'><hr /></div>
             </div>
-            <div class='forum-viewtopic-postmessage'>{POSTDELETED}</div>
-            <div class='finfobar'>{SIGNATURE=clean}</div>
+            <div class='col-sm-10'>
+              <div class='row'>
+                <div class='col-sm-12 col-md-6 text-muted'>
+                  <div class='smalltext'>{LASTEDIT}&nbsp;&nbsp;{LASTEDITBY}</div>
+                </div>
+                <div class='hidden-xs hidden-sm col-md-6 text-right'>{POSTOPTIONS}</div>
+              </div>
+              <div class='forum-viewtopic-postmessage'>{POSTDELETED}</div>
+              <div class='finfobar'>{SIGNATURE=clean}</div>
+            </div>
           </div>
         </div>
-      </div>
-		</li>
+		  </li>
 ";
 
 

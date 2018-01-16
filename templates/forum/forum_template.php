@@ -26,9 +26,9 @@ $FORUM_TRACK_END	= "<br />TRACK-END";
 // Modifiey by fizi ************************************************************
 
 $FORUM_TEMPLATE['main']['start'] = "
-{SETIMAGE: w=1200&h=1000&crop=1}
-<div class='forum-view-forum-caption-image' style='background: url(".THEME_ABS."images/forum-caption-bg.jpg) no-repeat center center; background-size: cover;'>
-  <div class='forum-view-forum-caption-image-inner'><h2>{FORUMTITLE}</h2></div>
+{SETIMAGE: w=2000&h=1000&crop=1}
+<div class='forum-caption-image' style='background: url(".THEME_ABS."images/forum-caption-bg.jpg) no-repeat center center; background-size: cover;'>
+  <div class='forum-caption-image-inner'><h2>{FORUMTITLE}</h2></div>
 </div>
 <div class='col-md-offset-1 col-md-10'>
   {FORUM_BREADCRUMB}
@@ -80,8 +80,8 @@ $FORUM_TEMPLATE['main']['end'] = "
 // Tracking
 $FORUM_TEMPLATE['track']['start'] = "
 {SETIMAGE: w=1200&h=1000&crop=1}
-<div class='forum-view-forum-caption-image' style='background: url(".THEME_ABS."images/forum-caption-bg.jpg) no-repeat center center; background-size: cover;'>
-  <div class='forum-view-forum-caption-image-inner'><h2>".LAN_FORUM_0030."</h2></div>
+<div class='forum-caption-image' style='background: url(".THEME_ABS."images/forum-caption-bg.jpg) no-repeat center center; background-size: cover;'>
+  <div class='forum-caption-image-inner'><h2>".LAN_FORUM_0030."</h2></div>
 </div>
 <div class='col-md-offset-1 col-md-10'>
   {FORUM_BREADCRUMB}

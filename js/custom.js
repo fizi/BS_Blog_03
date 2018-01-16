@@ -69,29 +69,7 @@ $(document).ready(function() {
 });
 
 
-// If page = page.php delete full maincontent-box-title *****************************************************************
-$(document).ready(function() {
-  // USE JAVASCRIPT TO GET PAGE NAME
-  var sPath = window.location.pathname;
-  var sPage = sPath.substring(sPath.lastIndexOf("/")+1);   
 
-  // DO SOMETHING IF...
-  if (sPage == 'page.php'){
-    $("div").remove(".maincontent-box-title");		
-  }
-}); 
-
-$(document).ready(function() {
-  // USE JAVASCRIPT TO GET PAGE NAME
-  var sPath = window.location.pathname;
-  var sPage = sPath.substring(0, sPath.lastIndexOf("/"));
-  var sDir = sPage.substring(sPage.lastIndexOf("/")+1);    
-
-  // DO SOMETHING IF...
-  if (sDir == 'page'){
-    $("div").remove(".maincontent-box-title");		
-  }
-}); 
 
 
 // Default News layout title box *************************************************

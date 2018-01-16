@@ -279,13 +279,9 @@ define('TRACKBACKBEFORESTRING', '&nbsp;|&nbsp;');
   
   echo "<!-- tablestyle: style=".$style." id=".$id." -->\n\n";
 	
-	if($id === "gallery-index-list" || $id === "gallery-index-category")
+	if($id === "gallery-index-list" || $id === "gallery-index-category" || $id === "forum" || $id === "forum-track" || $id === "forum-viewforum" || $id === "forum-viewtopic" || $id === "forum-post" || $id === "cpage")
   {
-    $style = 'gallery';
-  }
-  if($id === "forum")
-  {
-    $style = 'forum';
+    $style = 'no-caption';
   }
 
 	//@todo a switch will be faster than all these elseif statements. 
@@ -308,13 +304,7 @@ define('TRACKBACKBEFORESTRING', '&nbsp;|&nbsp;');
             </div>";
     break;  
     
-    case "gallery":
-      echo "<div class='maincontent-box'>                             
-              <div class='maincontent-box-body'>{$text}</div>
-            </div>";
-    break;
-    
-    case "forum":
+    case "no-caption":
       echo "<div class='maincontent-box'>                             
               <div class='maincontent-box-body'>{$text}</div>
             </div>";
