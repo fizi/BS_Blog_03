@@ -279,7 +279,14 @@ define('TRACKBACKBEFORESTRING', '&nbsp;|&nbsp;');
   
   echo "<!-- tablestyle: style=".$style." id=".$id." -->\n\n";
 	
-	if($id === "gallery-index-list" || $id === "gallery-index-category" || $id === "forum" || $id === "forum-track" || $id === "forum-viewforum" || $id === "forum-viewtopic" || $id === "forum-post" || $id === "cpage")
+	if($id === "gallery-index-list" || 
+     $id === "gallery-index-category" || 
+     $id === "forum" || $id === "forum-track" || 
+     $id === "forum-viewforum" || 
+     $id === "forum-viewtopic" || 
+     $id === "forum-post" || $id === "cpage" || 
+     $id === "event-calendar" ||
+     $id === "event-calendar-event")
   {
     $style = 'no-caption';
   }

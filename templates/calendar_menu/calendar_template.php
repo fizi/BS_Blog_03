@@ -40,14 +40,6 @@ if (!defined('USER_WIDTH')){ define('USER_WIDTH','width:auto'); }
   }		// Filename of icon used to flag recent events
 
 
-// Main Calendar page - calendar.php
-$CALENDAR_CAPTION['caption'] = '
-{SETIMAGE: w=1200&h=1000&crop=1}
-<div class="event-calendar-caption-image" style="background: url('.THEME_ABS.'images/calendar-bg.jpg) no-repeat center center; background-size: cover;">
-  <div class="event-calendar-caption-image-inner"><h2>'.EC_LAN_79.'</h2></div>
-</div>
-';
-
 // Calendar News Event page - event.php
 $CALENDAR_NEW_CAPTION['caption'] = '
 {SETIMAGE: w=1200&h=1000&crop=1}
@@ -111,20 +103,26 @@ $sc_style['EC_NEXT_YEAR']['post'] = '</span>';
 
 $CALENDAR_TIME_TABLE = "
 <div id='event-calendar'>
-  <div class='event-calendat-month'>
-    <div class='row vertical-align'>
-	    <div class='col-xs-3'>{EC_PREV_MONTH}</div>
-	    <div class='col-xs-6 text-center'>{EC_CURRENT_MONTH}</div>
-	    <div class='col-xs-3 text-right'>{EC_NEXT_MONTH}</div>
-    </div>
+  {SETIMAGE: w=2000&h=1000&crop=1}
+  <div class='event-calendar-caption-image' style='background: url(".THEME_ABS."images/calendar-bg.jpg) no-repeat center center; background-size: cover;'>
+    <div class='event-calendar-caption-image-inner'><h2>".EC_LAN_79."</h2></div>
   </div>
-  <div class='event-calendar-year-month'>
-    <div class='row vertical-align'>
-	    <div class='col-xs-3'>{EC_PREV_YEAR}</div>
-	    <div class='col-xs-6 text-center'>{EC_MONTH_LIST}</div>
-	    <div class='col-xs-3 text-right'>{EC_NEXT_YEAR}</div>
-    </div>
-  </div>";
+  <div class='row'>
+    <div class='col-md-offset-1 col-md-10'>
+      <div class='event-calendat-month'>
+        <div class='row vertical-align'>
+	        <div class='col-xs-3'>{EC_PREV_MONTH}</div>
+	        <div class='col-xs-6 text-center'>{EC_CURRENT_MONTH}</div>
+	        <div class='col-xs-3 text-right'>{EC_NEXT_MONTH}</div>
+        </div>
+      </div>
+      <div class='event-calendar-year-month'>
+        <div class='row vertical-align'>
+	        <div class='col-xs-3'>{EC_PREV_YEAR}</div>
+	        <div class='col-xs-6 text-center'>{EC_MONTH_LIST}</div>
+	        <div class='col-xs-3 text-right'>{EC_NEXT_YEAR}</div>
+        </div>
+      </div>";
 
 
 // NAVIGATION BUTTONS
@@ -134,65 +132,65 @@ $sc_style['EC_NAV_LINKCURRENTMONTH']['pre'] = "";
 $sc_style['EC_NAV_LINKCURRENTMONTH']['post'] = "";
 
 $CALENDAR_NAVIGATION_TABLE = "
-  <div class='calendar-nav text-center'>
-    <form method='post' action='" . e_SELF . "?" . e_QUERY . "' id='calform'>
-      <div class='row'>
-        <div class='col-xs-12 text-center'>{EC_NAV_CATEGORIES} {EC_NAV_BUT_ALLEVENTS} {EC_NAV_BUT_VIEWCAT} {EC_NAV_BUT_ENTEREVENT} {EC_NAV_BUT_SUBSCRIPTION} {EC_NAV_BUT_PRINTLISTS} {EC_NAV_LINKCURRENTMONTH}</div>
-      </div>
-    </form>
-  </div>";
+      <div class='calendar-nav text-center'>
+        <form method='post' action='" . e_SELF . "?" . e_QUERY . "' id='calform'>
+          <div class='row'>
+            <div class='col-xs-12 text-center'>{EC_NAV_CATEGORIES} {EC_NAV_BUT_ALLEVENTS} {EC_NAV_BUT_VIEWCAT} {EC_NAV_BUT_ENTEREVENT} {EC_NAV_BUT_SUBSCRIPTION} {EC_NAV_BUT_PRINTLISTS} {EC_NAV_LINKCURRENTMONTH}</div>
+          </div>
+        </form>
+      </div>";
 
 
 //------------------------------------------
 // CALENDAR CALENDAR - 'Big' calendar
 //------------------------------------------
 $CALENDAR_CALENDAR_START = "
-  <div class='calendar-big text-center'>
+      <div class='calendar-big text-center'>
 ";
 
 //header row ***********************************************
 $CALENDAR_CALENDAR_HEADER_START = "
-    <div class='row seven-cols calendar-big-header'>
+        <div class='row seven-cols calendar-big-header'>
 ";
 
 $CALENDAR_CALENDAR_HEADER = "
-      <div class='col-xs-1'>{EC_CALENDAR_CALENDAR_HEADER_DAY}</div>
+          <div class='col-xs-1'>{EC_CALENDAR_CALENDAR_HEADER_DAY}</div>
 ";
 
 $CALENDAR_CALENDAR_HEADER_END = "
-    </div>
-    <div class='row seven-cols week'>";
+        </div>
+        <div class='row seven-cols week'>";
 
 $CALENDAR_CALENDAR_WEEKSWITCH = "
-    </div>
-    <div class='row seven-cols week'>
+        </div>
+        <div class='row seven-cols week'>
 ";
 
 // 'Empty' cells where there's not a day at all ************
 $CALENDAR_CALENDAR_DAY_NON = "
-      <div class='col-xs-1 day-none' style='height:90px;'></div>
+          <div class='col-xs-1 day-none' style='height:90px;'></div>
 ";
 
 //today ****************************************************
 $CALENDAR_CALENDAR_DAY_TODAY = "
-      <div class='col-xs-1 day day-today' style='height:90px;'>
-        <span style='position:relative; top:0;'>{EC_CALENDAR_CALENDAR_DAY_TODAY_HEADING}</span>
+          <div class='col-xs-1 day day-today' style='height:90px;'>
+            <span style='position:relative; top:0;'>{EC_CALENDAR_CALENDAR_DAY_TODAY_HEADING}</span>
 ";
 
 //day has events *********************************************
 $CALENDAR_CALENDAR_DAY_EVENT = "
-      <div class='col-xs-1 day day-event' style='height:90px;'>
-        <span style='position:relative; top:0;'>{EC_CALENDAR_CALENDAR_DAY_EVENT_HEADING}</span>
+          <div class='col-xs-1 day day-event' style='height:90px;'>
+            <span style='position:relative; top:0;'>{EC_CALENDAR_CALENDAR_DAY_EVENT_HEADING}</span>
 ";
 
 // no events and not today *************************************
 $CALENDAR_CALENDAR_DAY_EMPTY = "
-      <div class='col-xs-1 day day-empty' style='height:90px;'>
-        <span style='position:relative; top:0;'>{EC_CALENDAR_CALENDAR_DAY_EMPTY_HEADING}</span>
+          <div class='col-xs-1 day day-empty' style='height:90px;'>
+            <span style='position:relative; top:0;'>{EC_CALENDAR_CALENDAR_DAY_EMPTY_HEADING}</span>
 ";
 
 $CALENDAR_CALENDAR_DAY_END = "
-      </div>
+          </div>
 ";
 
 // CALENDAR SHOW EVENT *************************************
@@ -200,17 +198,19 @@ $sc_style['EC_CALENDAR_CALENDAR_RECENT_ICON']['pre'] = "";
 $sc_style['EC_CALENDAR_CALENDAR_RECENT_ICON']['post'] = "";
 
 $CALENDAR_SHOWEVENT = "
-        <table cellspacing='0' cellpadding='0' style='width:100%;'>
-          <tr>
-            <td style='vertical-align:center; width:10px;'>{EC_CALENDAR_CALENDAR_RECENT_ICON}</td>
-            <td style='vertical-align:top; width:10px;'>{EC_SHOWEVENT_IMAGE}</td>
-            <td style='vertical-align:top; width:2%;'>{EC_SHOWEVENT_INDICAT}</td>
-            <td style='vertical-align:top;'>{EC_SHOWEVENT_HEADING}</td>
-          </tr>
-        </table>
+            <table cellspacing='0' cellpadding='0' style='width:100%;'>
+              <tr>
+                <td style='vertical-align:center; width:10px;'>{EC_CALENDAR_CALENDAR_RECENT_ICON}</td>
+                <td style='vertical-align:top; width:10px;'>{EC_SHOWEVENT_IMAGE}</td>
+                <td style='vertical-align:top; width:2%;'>{EC_SHOWEVENT_INDICAT}</td>
+                <td style='vertical-align:top;'>{EC_SHOWEVENT_HEADING}</td>
+              </tr>
+            </table>
 ";
 
 $CALENDAR_CALENDAR_END = "
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -222,12 +222,12 @@ $sc_style['EC_EVENTLIST_CAPTION']['pre'] = "";
 $sc_style['EC_EVENTLIST_CAPTION']['post'] = "";
 
 $EVENT_EVENTLIST_TABLE_START = "
-  <div class='event-list'>
-    <div class='event-list-caption'>{EC_EVENTLIST_CAPTION}</div>
+      <div class='event-list'>
+        <div class='event-list-caption'>{EC_EVENTLIST_CAPTION}</div>
 ";
 
 $EVENT_EVENTLIST_TABLE_END = "
-  </div>";
+      </div>";
 
 
 
@@ -236,26 +236,28 @@ $sc_style['EC_EVENTARCHIVE_CAPTION']['pre'] = "";
 $sc_style['EC_EVENTARCHIVE_CAPTION']['post'] = "";
 
 $EVENT_ARCHIVE_TABLE_START = "
-  <br />
-  <div class='coming-event'>
-    <div class='coming-event-caption'>{EC_EVENTARCHIVE_CAPTION}</div>
+      <br />
+      <div class='coming-event'>
+        <div class='coming-event-caption'>{EC_EVENTARCHIVE_CAPTION}</div>
 ";
 
 $EVENT_ARCHIVE_TABLE = "
-    <div class='coming-event-body'>
-      <div class='row'>
-	      <div class='col-md-3 coming-event-date'>{EC_EVENT_RECENT_ICON}{EC_EVENTARCHIVE_DATE}</div>
-	      <div class='col-md-9 coming-event-heading'>{EC_EVENTARCHIVE_HEADING}</div>
-      </div>
-    </div>
+        <div class='coming-event-body'>
+          <div class='row'>
+	          <div class='col-md-3 coming-event-date'>{EC_EVENT_RECENT_ICON}{EC_EVENTARCHIVE_DATE}</div>
+	          <div class='col-md-9 coming-event-heading'>{EC_EVENTARCHIVE_HEADING}</div>
+          </div>
+        </div>
 ";
 
 //<br />{EVENTARCHIVE_DETAILS}
 $EVENT_ARCHIVE_TABLE_EMPTY = " 
-    <div class='coming-event-empty'>{EC_EVENTARCHIVE_EMPTY}</div>
+        <div class='coming-event-empty'>{EC_EVENTARCHIVE_EMPTY}</div>
 ";
 
 $EVENT_ARCHIVE_TABLE_END = "
+      </div>
+    </div>
   </div>
 </div>";
 
@@ -313,26 +315,26 @@ $EVENT_EVENT_DATETIME[2]  = "{EC_EVENT_DATE_START} <b>".EC_LAN_69."</b> {EC_EVEN
 $EVENT_EVENT_DATETIME[3]  = "{EC_EVENT_DATE_START}";
 
 $EVENT_EVENT_TABLE_START = "
-  <div class='event-items'>
+      <div class='event-items'>
 ";
 
 $EVENT_EVENT_TABLE = "
-    <div class='event-item'>
-	    <a href='#{EC_EVENT_ID}' class='e-show-if-js e-expandit' title='".EC_LAN_132."'>{EC_EVENT_RECENT_ICON}{EC_EVENT_CAT_ICON}{EC_EVENT_HEADING_DATE}{EC_IFNOT_ALLDAY=EC_EVENT_TIME_START}&nbsp;-&nbsp;{EC_EVENT_TITLE}</a>
-	    <div id='{EC_EVENT_ID}' {EC_EVENT_DISPLAYCLASS} style='padding-top: 10px; padding-bottom: 10px;'>
-	      <div class='event-item-body'>
-          <div class='event-item-meta'>{EC_EVENT_AUTHOR} {EC_EVENT_CAT_ICON} {EC_EVENT_CATEGORY} {EC_EVENT_CONTACT} {EC_EVENT_OPTIONS}</div>
-          <div class='event-item-date'>{EC_EVENT_EVENT_DATE_TIME}</div>
-          <div class='event-item-location'><b>".EC_LAN_32."</b> {EC_EVENT_LOCATION}</div>
-          <div class='event-item-details'>{EC_EVENT_DETAILS}</div>
-          <div class='event-item-moreinfo'><span class='smalltext'>{EC_EVENT_THREAD}</span></div>
-	      </div>
-	    </div>
-    </div>
+        <div class='event-item'>
+	        <a href='#{EC_EVENT_ID}' class='e-show-if-js e-expandit' title='".EC_LAN_132."'>{EC_EVENT_RECENT_ICON}{EC_EVENT_CAT_ICON}{EC_EVENT_HEADING_DATE}{EC_IFNOT_ALLDAY=EC_EVENT_TIME_START}&nbsp;-&nbsp;{EC_EVENT_TITLE}</a>
+	        <div id='{EC_EVENT_ID}' {EC_EVENT_DISPLAYCLASS} style='padding-top: 10px; padding-bottom: 10px;'>
+	          <div class='event-item-body'>
+              <div class='event-item-meta'>{EC_EVENT_AUTHOR} {EC_EVENT_CAT_ICON} {EC_EVENT_CATEGORY} {EC_EVENT_CONTACT} {EC_EVENT_OPTIONS}</div>
+              <div class='event-item-date'>{EC_EVENT_EVENT_DATE_TIME}</div>
+              <div class='event-item-location'><b>".EC_LAN_32."</b> {EC_EVENT_LOCATION}</div>
+              <div class='event-item-details'>{EC_EVENT_DETAILS}</div>
+              <div class='event-item-moreinfo'><span class='smalltext'>{EC_EVENT_THREAD}</span></div>
+	          </div>
+	        </div>
+        </div>
 ";
 
 $EVENT_EVENT_TABLE_END = "
-  </div>
+      </div>
 ";
 
 
